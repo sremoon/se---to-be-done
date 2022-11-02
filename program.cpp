@@ -2,9 +2,15 @@
 
 Program::Program(char *name) {
     strcpy(_name, name);
+    char* fname = name;
+    while(*fname != '\0') fname ++;
+    while(*fname != '/' && fname >= name) fname --; 
+    fname ++;
+    strcpy(_fname, fname);
 }
 
 char* Program::name() { return _name; }
+char* Program::fname() { return _fname; }
 
 All_program::All_program() {
     _ap.clear();
@@ -18,6 +24,14 @@ char* All_program::program_name(int T) {
         return "";
     } 
     return _ap[T - 1].name();
+}
+
+char* All_program::file_name(int T) {
+    if(T > program_num()) {
+        cerr << "Error : Try to attach an unexist program" << endl;
+        return "";
+    } 
+    return _ap[T - 1].fname();
 }
 
 void All_program::add_program(char *name) {

@@ -29,10 +29,18 @@ class Input {
     // T is the testcase we generate
     void Read_OJ_program(char* input_file, All_program &Programs) {
         char cmd[500], buf[1005];
+        system("mkdir test");
         sprintf(cmd, "find %s -name \"*.cpp\" > ./test/oj.list", input_file);
         system(cmd);
         FILE* oj = fopen("./test/oj.list", "r");
-        while(fgets(buf, 1000, (FILE*)oj)) Programs.add_program(buf);
+        while(fgets(buf, 1000, (FILE*)oj)) {
+            char *now = buf;
+            while((*now) != '\0') {
+                if(*now == '\n' || *now == '\r') *now = '\0';
+                now ++;
+            }
+            Programs.add_program(buf);
+        }
     }
     void Generate_test(char* input_file, int T = 100) {
         srand(time(0));
