@@ -42,7 +42,7 @@ class Input {
             Programs.add_program(buf);
         }
     }
-    void Generate_test(char* input_file, int T = 100) {
+    void Generate_test(char* input_file, int T = 20) {
         srand(time(0));
         int nT = 0;
         char buf[1005], test_name[50], number_buf[50];

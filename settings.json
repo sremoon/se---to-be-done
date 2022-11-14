@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "typeindex": "cpp",
+        "typeinfo": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "random": "cpp",
+        "chrono": "cpp",
+        "charconv": "cpp",
+        "string": "cpp",
+        "vector": "cpp"
+    }
+}

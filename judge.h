@@ -11,9 +11,11 @@ class Machine_Judge {
             tt.compile_all(Programs);
             int l = Programs.program_num();
             system("mkdir output");
-            FILE *equal = fopen("./output/equal.csv", "w");
-            FILE *inequal = fopen("./output/inequal.csv", "w");
-            FILE *abnormal = fopen("./output/abnormal.csv", "w");
+            FILE *equal = fopen("./output/equal.csv", "a");
+            FILE *inequal = fopen("./output/inequal.csv", "a");
+            FILE *abnormal = fopen("./output/abnormal.csv", "a");
+            bool eq = 0;
+            bool ineq = 0;
             for(int i = 1; i <= l; i ++) for(int j = i + 1; j <= l; j ++) {
                 char cmd[500];
                 sprintf(cmd, "%s,%s\n", Programs.file_name(i), Programs.file_name(j));

@@ -3,9 +3,8 @@
 Program::Program(char *name) {
     strcpy(_name, name);
     char* fname = name;
-    while(*fname != '\0') fname ++;
-    while(*fname != '/' && fname >= name) fname --; 
-    fname ++;
+    while(*fname != '/') fname ++; fname ++; // ./
+    while(*fname != '/') fname ++; fname ++; // input/
     strcpy(_fname, fname);
 }
 
@@ -13,6 +12,10 @@ char* Program::name() { return _name; }
 char* Program::fname() { return _fname; }
 
 All_program::All_program() {
+    _ap.clear();
+}
+
+void All_program::init() {
     _ap.clear();
 }
 

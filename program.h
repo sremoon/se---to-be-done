@@ -20,6 +20,7 @@ class All_program {
     private:
         vector<Program> _ap;
     public:
+        void init();
         All_program();
         int program_num();
         char* program_name(int T);

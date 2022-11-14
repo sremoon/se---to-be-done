@@ -16,7 +16,7 @@ class Test {
         int test_pair(int Ti, int Tj) {
             char cmd[500];
             bool gg = 0;
-            for(int i = 1; i <= 100; i ++) {
+            for(int i = 1; i <= 20; i ++) {
                 sprintf(cmd, "timeout 2s ./test/%d.out < ./test/%d.in > ./test/left%d.ans", Ti, i, i);
                 system(cmd);
                 sprintf(cmd, "timeout 2s ./test/%d.out < ./test/%d.in > ./test/right%d.ans", Tj, i, i);
