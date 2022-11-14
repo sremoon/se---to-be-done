@@ -2,6 +2,7 @@
 #include "test.h"
 #include "input.h"
 #include <sys/types.h>
+#include <sys/stat.h>
 #include <dirent.h>
 
 Input input;
@@ -27,6 +28,10 @@ int main() {
     system("rm -rf ./output");
 
     for(auto x : fs) {  
+
+	struct stat buf;
+	if(!(stat(x.c_str(), &buf) == 0 && (S_IFDIR & buf.st_mode))) continue;
+
         input.init();
 
         programs.init();
