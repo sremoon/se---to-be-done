@@ -54,7 +54,6 @@ class Input {
                 return;
             }
             sprintf(test_name, "./test/%d.in", ++ nT);
-            cout << test_name << endl;
             test = fopen(test_name, "w");
             // You should garantee single line does not overload 25000 charecters
             while(fgets(buf, 1000, (FILE*)format)) {

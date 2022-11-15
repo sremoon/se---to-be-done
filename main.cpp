@@ -41,6 +41,7 @@ int main() {
         input.Generate_test((char *)addr.c_str(), 20);
 
         machine_judge.Judge(test, programs);
+
         system("rm -rf ./test");
     }
 

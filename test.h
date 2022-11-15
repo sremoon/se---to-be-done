@@ -21,7 +21,7 @@ class Test {
                 system(cmd);
                 sprintf(cmd, "timeout 2s ./test/%d.out < ./test/%d.in > ./test/right%d.ans", Tj, i, i);
                 system(cmd);
-                sprintf(cmd, "diff ./test/left%d.ans ./test/right%d.ans", i, i);
+                sprintf(cmd, "diff ./test/left%d.ans ./test/right%d.ans > ./test/log.txt", i, i);
                 if(system(cmd)) gg = 1;
                 sprintf(cmd, "rm ./test/left%d.ans", i);
                 system(cmd);
